@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebScraping Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">WebScraping</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li>
+							<a href="https://yannkjy.github.io/Portfolio">Home</a>
+						</li>
+						<li class="active">
+							<a href="index.html">Back to Projects Homepage</a>
+						</li>	
+					</ul>
+					<ul class="icons">		
+						<li>
+							<a href="https://yannkjy.github.io/Main/#contact" class="icon brands alt Email-icon email-icon-spacing">
+								<span class="fas fa-envelope"></span>
+								<span class="label">Email</span>
+							</a>
+						</li>					
+						<li><a href="https://www.linkedin.com/in/yann-kang-b77a19275/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Project" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						
+						<li>
+							<a href="https://public.tableau.com/app/profile/yann.kang" class="icon brands alt fa-tableau tableau-icon">
+								<span class="circle1">
+								  <img src="images/logo-tableau.png" width="20" height="20" style="filter: invert(1);"></span>
+								<span class="label">Tableau</span>
+							</a>
+						</li>
+					</ul>
+					  
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Post -->												
+							<section class="post">																						
+								<header class="major">												
+									<div class="center-image-div">
+										<img src="images/WebScraping/Banner.png" style="margin-top: -30px; border: 1px solid rgba(0, 0, 0, 0.2);">
+										<p class="icon-container">
+											<a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Projects/blob/main/Python/Python%20Project%205.1%20(Web%20Scraping%20Jobstreet%20-%201%20Page).ipynb" class="icon brands alt fa-github">
+											  <span class="label">GitHub</span>
+											</a>						  
+										</p>
+									</div>							
+								</header>
+
+								<!-- Text stuff -->
+									<h2 style="margin-top: -40px;">Description</h2>
+									<p>Employ the technique of web scraping to gain comprehensive insights into the diverse 
+										Data Analyst job listings available on JobStreet, enabling you to explore a 
+										wide range of promising career prospects.</p>
+										<h4>Skills Applied: <span class="skills">Python</span></h4>
+										<h4>Libraries Used: <span style="color: brown;">csv, requests, BeautifulSoup</span></h4>
+										
+									<hr />
+									<h2>Implementation</h2>
+										<ul>
+											<li>
+												To begin, I examine the source code of the webpage I intend to scrape for relevant information.
+											</li>
+											<li>
+												Next, I aim to fetch webpage content from a URL using the <b>requests</b> library. 
+												It then employs <b>BeautifulSoup</b> to parse the HTML and create a structured representation 
+												of the webpage. Specifically, it extracts all <b>elements</b> with the <b>specified class names</b> 
+												and saves them in the <i>job_listings</i> variable for later use.
+											</li>
+											<li>
+												Subsequently, I would <b>print</b> the extracted information from each job 
+												listing as per my requirements.												
+											</li>
+											<li>
+												Lastly, I will store all the collected data in a <b>CSV file</b>.
+											</li>
+										</ul>
+									
+									<hr />
+									<header>
+										<h2>Breakdown</h2>
+										<p><b><span class="skills">PYTHON</span></b></p>
+									</header>
+									<h4>1. Importing Libraries</h4>
+									<p>
+										<span class="image fit"><img src="images/WebScraping/Import Libraries.png" /></span>
+										<ul>
+											<li>
+												I start the project by importing the necessary <b>libraries (csv, requests, BeautifulSoup)</b>
+											</li>											
+										</ul>
+									</p>
+									
+									<h4 style="margin-top: 60px;">2. Extract Raw HTML</h4>
+									<p>
+										<span class="image fit"><img src="images/WebScraping/Extract HTML.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+											<li>
+												Next, I fetch the <b>HTML content</b> from a Jobstreet webpage for Data Analyst jobs in Singapore.
+											</li>
+											<li>
+												It then extracts the job listings by finding specific elements with the provided class names.												
+											</li>
+											<li>
+												The <b>length</b> of the <i>job_listings</i> variable is obtained to determine the number of job postings on the page.
+											</li>
+										</ul> 
+									</p>
+									
+									<h4 style="margin-top: 60px;">3. Scrape Information</h4>
+									<p>
+										<span class="image fit"><img src="images/WebScraping/Print Job Details.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+											<li>
+												Subsequently, I used a <b>For Loop</b> to iterate through each job listing in the <i>job_listings</i> variable. 
+												For each listing, it extracts the following using specific HTML elements and class names:
+												<ul>
+													<li>
+													  	Title
+													</li>
+													<li>
+														Company Name
+													</li>
+													<li>
+														Salary
+													</li>
+													<li>
+														Description
+													</li>
+													<li>
+														Date Posted
+													</li>
+													<li>
+														How long ago it was posted
+													</li>
+												  </ul>
+											</li>
+										</ul>
+									</p>
+									
+									<h4 style="margin-top: 60px;">4. Print Scraped Information</h4>
+									<p>
+										<span class="image fit"><img src="images/WebScraping/Print.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+											<li>
+												I <b>print</b> out all the scraped information to make sure everything is scraped correctly.
+											</li>											
+										</ul>
+									</p>
+									
+									<h4 style="margin-top: 60px;">5. Save data to CSV</h4>
+									<p>
+										<span class="image fit"><img src="images/WebScraping/Save to CSV.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+											<li>
+												Finally, I store all the extracted data into a <b>CSV file</b> for convenient reference and potential future analysis.
+											</li>											
+										</ul>
+									</p>
+
+									<p style="margin-top: 60px; color: red; font-weight: bold;">Important Note:</p>
+									<p style="margin-top: -30px; color: red;">This scraping is only for one page. For multiple pages, 
+										please refer to this <b><a style="color: red;"href="https://github.com/YannKJY/Data-Analyst-Portfolio-Projects/blob/main/Python/Python%20Project%205.2%20(Web%20Scraping%20Jobstreet%20-%20Multiple%20Pages).ipynb">code</a></b>.
+									</p>
+
+									<hr/>
+									<header style="margin-top: 60px;">
+										<h2>Preview</h2>										
+									</header>	
+									<span class="image fit"><img src="images/WebScraping/GIF.gif"/></span>
+									<span class="image fit"><img src="images/WebScraping/CSV output.png"/></span>
+
+
+									<ul class="actions fit" style="margin-top: 100px;">
+										<li><a href="index.html" class="button primary fit">Go back to Projects homepage</a></li>
+										<li><a href="#" class="button fit">Back to top</a></li>										
+									</ul>
+							</section>
+						<!--END OF POST-->
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">						
+					<section class="split contact">							
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">	
+								<li>
+									<a href="https://yannkjy.github.io/Main/#contact" class="icon brands alt fa-icon">
+										<div class="circle-container">
+											<div class="circle-bg">
+												<span class="fas fa-envelope"></span>
+											</div>												
+										</div>
+									</a>
+								</li>			
+								<li><a href="https://www.linkedin.com/in/yann-kang-b77a19275/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Project" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li>
+									<a href="https://public.tableau.com/app/profile/yann.kang" class="icon brands alt fa-tableau">
+										<span class="circle">
+											<img src="images/logo-tableau.png" width="20" height="20">
+										  </span>
+										  <span class="label">Tableau</span>
+									</a>
+								</li>																	  
+																							  
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; Yann's Portfolio</li><li></a></li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Forbes List Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">Forbes List</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li>
+							<a href="https://yannkjy.github.io/Portfolio">Home</a>
+						</li>
+						<li class="active">
+							<a href="index.html">Back to Projects Homepage</a>
+						</li>	
+					</ul>
+					<ul class="icons">		
+						<li>
+							<a href="https://yannkjy.github.io/Main/#contact" class="icon brands alt Email-icon email-icon-spacing">
+								<span class="fas fa-envelope"></span>
+								<span class="label">Email</span>
+							</a>
+						</li>					
+						<li><a href="https://www.linkedin.com/in/yann-kang-b77a19275/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Project" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						
+						<li>
+							<a href="https://public.tableau.com/app/profile/yann.kang" class="icon brands alt fa-tableau tableau-icon">
+								<span class="circle1">
+								  <img src="images/logo-tableau.png" width="20" height="20" style="filter: invert(1);"></span>
+								<span class="label">Tableau</span>
+							</a>
+						</li>
+					</ul>
+					  
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Post -->												
+							<section class="post">																						
+								<header class="major">												
+									<div class="center-image-div">
+										<img src="images/Forbes/Forbes Banner.png" style="margin-top: -30px; border: 1px solid rgba(0, 0, 0, 0.2);">
+
+										<p class="icon-container">
+											<a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Projects/blob/main/Full%20Project/Forbes%20List%20(SQL%20%2B%20Excel%20%2B%20Tableau).zip" class="icon brands alt fa-github">
+											  <span class="label">GitHub</span>
+											</a>
+										  
+											<a href="https://public.tableau.com/app/profile/yann.kang/viz/ForbesListFeb2023/Dashboard1" class="icon brands alt fa-tableau tableau1-icon">
+											  <img src="images/logo-tableau.png" alt="Tableau Icon" width="22" height="22" style="margin-top: 5px; ">
+											  <span class="label">Tableau</span>
+											</a>
+										  </p>
+
+									</div>
+									
+								</header>
+
+								<!-- Text stuff -->
+									<h2 style="margin-top: -40px;">Description</h2>
+									<p> I delved into the Forbes List of February 2023, conducting comprehensive Exploratory Data 
+										Analysis (EDA) to extract valuable insights. These insights were subsequently 
+										transformed into a dynamic and interactive dashboard, providing an engaging visualization 
+										of the data.</p>
+										<h4>Skills Applied: <span class="skills">SQL, Excel, Tableau</span></h4>
+										
+									<hr />
+									<h2>Implementation</h2>
+										<ul>
+											<li>
+												I proficiently employed a diverse range of <b>SQL</b> functions, including <b>SUM, MAX, MIN, and</b> 
+												<b>COUNT</b>, to gain insights during the data exploration process. Additionally, 
+												I utilized advanced techniques such as <b>Common Table Expressions (CTE)</b> to enhance 
+												the analysis and generate comprehensive results.
+											</li>
+											<li>
+												Utilize <b>Excel</b> for further data cleansing to improve the usability and quality of the information.
+											</li>											
+											<li>
+												Utilizing <b>Tableau</b>, I created a dynamic dashboard that simplifies the analysis breakdown, 
+												making it easier to comprehend and explore the insights.												
+											</li>
+										</ul>
+									
+									<hr />
+									<header>
+										<h2>Breakdown</h2>
+										<p><b><span class="skills">SQL</span></b></p>
+										<h4>Exploratory Data Analysis</h4>
+									</header>									
+									<span class="image fit"><img src="images/Forbes/Forbes Table SQL.png" alt="" /></span>
+									<p>
+										<ul>
+											<li>
+												To kickstart my project, I commenced by importing the dataset 
+												into <b>SQL</b> and devising analytical queries.
+											</li>
+											<li>
+												Following that, I proceeded with my exploratory data analysis (EDA) by utilizing various 
+												aggregate functions such as <b>MAX, MIN, SUM, and COUNT</b> to address several inquiries.
+											</li>
+											<li>												
+												Additionally, I performed <b>data cleaning</b> tasks to facilitate the transformation of the data into a 
+												more meaningful format that would assist in my analysis. For instance, I introduced a new column 
+												called <b>"Source_First_Name."</b>
+											</li>
+											<li>
+												Please refer to the <b>code section below (double-click)</b> to access the <b>complete EDA process</b> and the 
+												<b>corresponding list of questions</b>.
+											</li>											
+										</ul>
+									</p>
+									<p>
+										<!-- Add a label and checkbox to toggle the code visibility -->
+										<label for="toggleCode" class="collapsible">Complete EDA Code</label>
+										<input type="checkbox" id="toggleCode">
+
+										<!-- Wrap the code inside a div with a collapsible content class -->
+										<div class="content">
+											<pre><code>-- Dataset
+select *
+from [Forbes List]..Forbes
+order by rank
+
+-- Exploratory Data Analysis
+
+	-- What is the average, max, min age of these people in Forbes List?
+		select max(Age) as Highest_Age, min(Age) as Lowest_Age, cast(avg(Age) as int) as Average_Age
+		from [Forbes List]..Forbes
+
+
+	-- Who is below the average age?
+		select *
+		from [Forbes List]..Forbes
+		where age <= (select avg(age) from [Forbes List]..Forbes)
+		order by rank
+
+
+	-- I'm 24 y/o at the point of writing this SQL code, how many people below or equal to my age are in this list?
+		select count(Age) as Count_People_My_Age
+		from [Forbes List]..Forbes
+		where Age <= 24
+
+
+	-- What is the lowest Net Worth and the average of the net worth on the list?
+
+		-- First we need to make sure the Net Worth column is converted to FLOAT
+		WITH Net as (
+		select cast(REPLACE(REPLACE([Net Worth], '$', ''), ' B', '') as float) as Net_Worth_F
+		from [Forbes List]..Forbes
+		)
+
+		-- Now we can find the Lowest Net Worth and Average Net Worth using 'Net_Worth_F'
+		select CONCAT('$', round(avg(Net_Worth_F), 2), ' B') as Average_Net_Worth, CONCAT('$', min(Net_Worth_F), ' B') as Minimum_Net_Worth
+		from Net
+
+
+	-- How many people are above average? ($4.76 B)
+		WITH Net as (
+		select cast(REPLACE(REPLACE([Net Worth], '$', ''), ' B', '') as float) as Net_Worth_F
+		from [Forbes List]..Forbes
+		)
+
+		select count(Net_Worth_F) as Count_Above_Average
+		from Net
+		where Net_Worth_F > (select avg(Net_Worth_F) from Net)
+
+
+	-- What countries do these individuals come from?
+		select DISTINCT(Country)
+		from [Forbes List]..Forbes
+		
+
+	-- How many individuals come from their respective country?
+		select DISTINCT(Country), count(Country) as Count_Individuals
+		from [Forbes List]..Forbes
+		group by Country
+		order by count(Country) desc
+
+
+	-- What is the average age for the respective country to be on Forbes List?
+		select DISTINCT(Country), count(Country) as Count_Individuals, cast(avg(Age) as int) as Average_Age 
+		from [Forbes List]..Forbes
+		group by Country
+		order by count(Country) desc
+
+
+	-- Sources in Forbes List and most populour source
+		
+		-- The original Source column has too many different data, let's create a new column to ease my findings
+			select DISTINCT(Source),
+			case
+				WHEN CHARINDEX(',', Source) > 0 THEN SUBSTRING(Source, 1, CHARINDEX(',', Source) - 1)
+				WHEN CHARINDEX(' ', Source) > 0 THEN SUBSTRING(Source, 1, CHARINDEX(' ', Source) - 1)			
+				ELSE Source
+			end as First_Word
+			from [Forbes List]..Forbes
+			group by Source;
+
+		-- Now I want to group by 'First_Word' distinctively, and do a count to find out which is the most popular
+			select First_Word, count(First_Word) as Source_Count
+			from (
+				select DISTINCT Source,
+				case
+					WHEN CHARINDEX(',', Source) > 0 THEN SUBSTRING(Source, 1, CHARINDEX(',', Source) - 1)
+					WHEN CHARINDEX(' ', Source) > 0 THEN SUBSTRING(Source, 1, CHARINDEX(' ', Source) - 1)			
+					ELSE Source
+				end as First_Word
+				from [Forbes List]..Forbes
+				group by Source
+			) as subquery
+			group by First_Word
+			Order by count(First_Word) desc
+
+		-- Now I want to add this new column to my existing Forbes table.
+			ALTER TABLE [Forbes List]..Forbes ADD Source_First_Word NVARCHAR(255)
+
+			UPDATE [Forbes List]..Forbes
+			SET Source_First_Word = case
+							WHEN CHARINDEX(',', Source) > 0 THEN SUBSTRING(Source, 1, CHARINDEX(',', Source) - 1)
+							WHEN CHARINDEX(' ', Source) > 0 THEN SUBSTRING(Source, 1, CHARINDEX(' ', Source) - 1)			
+							ELSE Source
+						end
+			
+
+	-- What is the most popular industry?
+		select DISTINCT(Industry), count(Industry) as Industry_Count
+		from [Forbes List]..Forbes
+		group by Industry
+		order by count(Industry) desc
+		
+	-- Which industry has the highest average net worth?
+		WITH Net as (
+			select Industry, count(Industry) as Industry_Count, round(avg(cast(REPLACE(REPLACE([Net Worth], '$', ''), ' B', '') as float)), 2) as Average_Net_Worth_F
+			from [Forbes List]..Forbes
+			group by Industry			
+		)	
+
+		select Industry, Industry_Count, CONCAT('$', Average_Net_Worth_F, ' B') as Average_Net_Worth
+		from Net 
+		order by Average_Net_Worth desc
+											</code></pre>
+										</div>																					 																	
+									</p>
+									
+									<header style="margin-top: 60px;">
+										<p><b><span class="skills">Excel</span></b></p>
+										<h4>Data Cleaning</h4>
+									</header>																		
+									<p><span class="image left"><img src="images/BikeStores/Excel (Import data).png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>						
+										<ul>
+											<li>
+												I have chosen to utilize <b>Excel</b> for additional data cleaning in order to enhance the 
+												usability and quality of the information.
+											</li>
+											<p></p>											
+											<li>												
+												Firstly, I imported my SQL dataset into Excel by carrying out the following steps:
+												<b>Get Data -> From Database -> From SQL Server Database</b>
+											</li>											
+										</ul>
+									</p>
+									<p><span class="image left"><img src="images/Forbes/Forbes Excel.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+										<ul>
+											<li>
+												I observed that the "Source" column contains multiple instances of <b>duplicates with variations</b> in 
+												spelling, such as additional letters or spelling errors.
+											</li>
+											<p></p>
+											<li>
+												Subsequently, I employed the <b>REPLACE</b> function to perform the required cleaning 
+												operations on the "Source" column until all entries became unique by resolving 
+												variations in spelling and <b>eliminating duplicates</b>.
+											</li>											
+										</ul>
+									</p>							
+
+									<header style="margin-top: 250px;">
+										<p><b><span class="skills">Tableau</span></b></p>
+										<h4>Create Dashboard</h4>
+									</header>									
+									<span class="image fit"><img src="images/Forbes/Forbes Dashboard.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/></span>
+									<p>
+										<ul>
+											<li>												
+												To enhance the accessibility and ease of reference for all the information, 
+												I utilized <b>Tableau</b> to develop an interactive dashboard.
+											</li>
+											<li>												
+												In order to maximize dashboard interactivity, I integrated <b>dynamic filters</b> into relevant charts.
+											</li>
+											<li>
+												By leveraging <b>parameters and calculated fields</b>, users are empowered to actively explore and 
+												refine the presentation of data according to their individual requirements, thereby enhancing 
+												their overall interactive experience.
+											</li>									
+										</ul>
+										<p style="color: red;">** Please note that there is a display error with the parameter shown in the picture (<i>"Select Country"</i>).
+											To view the correct display, kindly visit my 
+											<b><a href="https://public.tableau.com/app/profile/yann.kang/viz/ForbesListFeb2023/Dashboard1" style="color: red;">Tableau profile</a></b>.
+										</p>
+									</p>
+
+
+									<ul class="actions fit" style="margin-top: 100px;">
+										<li><a href="index.html" class="button primary fit">Go back to Projects homepage</a></li>
+										<li><a href="#" class="button fit">Back to top</a></li>										
+									</ul>
+							</section>
+						<!--END OF POST-->
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">						
+					<section class="split contact">							
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">	
+								<li>
+									<a href="https://yannkjy.github.io/Main/#contact" class="icon brands alt fa-icon">
+										<div class="circle-container">
+											<div class="circle-bg">
+												<span class="fas fa-envelope"></span>
+											</div>												
+										</div>
+									</a>
+								</li>			
+								<li><a href="https://www.linkedin.com/in/yann-kang-b77a19275/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/YannKJY/Data-Analyst-Portfolio-Project" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li>
+									<a href="https://public.tableau.com/app/profile/yann.kang" class="icon brands alt fa-tableau">
+										<span class="circle">
+											<img src="images/logo-tableau.png" width="20" height="20">
+										  </span>
+										  <span class="label">Tableau</span>
+									</a>
+								</li>																	  
+																							  
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; Yann's Portfolio</li><li></a></li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				// Add event listener to toggle code visibility
+				document.querySelector('.collapsible').addEventListener('click', function() {
+				  var content = document.querySelector('.content');
+				  content.style.display = content.style.display === 'none' ? 'block' : 'none';
+				});
+				</script>
+
+	</body>
+</html>
