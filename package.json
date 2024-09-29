@@ -1,0 +1,27 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "Massively by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
+  "main": "server.js",
+  "scripts": {
+    "test": "hi",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzjZhengJie/Projects.git"
+  },
+  "keywords": [
+    "nil"
+  ],
+  "author": "zhengjie",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tzjZhengJie/Projects/issues"
+  },
+  "homepage": "https://github.com/tzjZhengJie/Projects#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
